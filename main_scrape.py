@@ -79,6 +79,7 @@ team = []
 url = 'http://www.fftoday.com/stats/playerstats.php?Season=2016&GameWeek=&PosID='
 
 pos = (input("What position is the player: \n ---> "))
+player_name = (input("Players name: \n ---> "))
 if pos == 'QB':
     url += '10'
     col_max = 12
@@ -106,18 +107,24 @@ for row in soup.find_all('td', class_='sort1'):
         player_array.append(row.text)
         col_count += 1
 
-if pos == 'QB':
-    player = QB(player_array[0], player_array[1], player_array[2], player_array[3],
-                player_array[4], player_array[5], player_array[6], player_array[7],
-                player_array[8], player_array[9], player_array[10], player_array[11],
-                player_array[12])
-elif pos == 'RB':
-    player = RB(player_array[0], player_array[1], player_array[2], player_array[3],
-                player_array[4], player_array[5], player_array[6], player_array[7],
-                player_array[8], player_array[9], player_array[10], player_array[11])
-else:
-    player = WR(player_array[0], player_array[1], player_array[2], player_array[3],
-                player_array[4], player_array[5], player_array[6], player_array[7],
-                player_array[8], player_array[9], player_array[10], player_array[11])
+count = 0
+for item in player_array:
+    if item == player_name:
+        if pos == 'QB':
+            player = QB(player_array[count], player_array[count+1], player_array[count+2], player_array[count+3],
+                        player_array[count+4], player_array[count+5], player_array[count+6], player_array[count+7],
+                        player_array[count+8], player_array[count+9], player_array[count+10], player_array[count+11],
+                        player_array[count+12])
+        elif pos == 'RB':
+            player = RB(player_array[count], player_array[count+1], player_array[count+2], player_array[count+3],
+                        player_array[count+4], player_array[count+5], player_array[count+6], player_array[count+7],
+                        player_array[count+8], player_array[count+9], player_array[count+10], player_array[count+11])
+        else:
+            player = WR(player_array[count], player_array[count+1], player_array[count+2], player_array[count+3],
+                        player_array[count+4], player_array[count+5], player_array[count+6], player_array[count+7],
+                        player_array[count+8], player_array[count+9], player_array[count+10], player_array[count+11])
+        break
+    else:
+        count += 1
 
 player.print_stats()
