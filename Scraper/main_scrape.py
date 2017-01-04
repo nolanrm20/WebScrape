@@ -14,13 +14,13 @@ url = 'http://www.fftoday.com/stats/playerstats.php?Season=2016&GameWeek=&PosID=
 pos = (input("What position is the player: \n ---> "))
 player_name = (input("Players name: \n ---> "))
 # get correct web url
-if pos == 'QB':
+if pos.upper() == 'QB':
     url += '10'
     col_max = 12
-elif pos == 'RB':
+elif pos.upper() == 'RB':
     url += '20&LeagueID=1'
     col_max = 11
-elif pos == 'WR':
+elif pos.upper() == 'WR':
     url += '30&LeagueID=1'
     col_max = 11
 
