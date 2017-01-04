@@ -1,4 +1,10 @@
-""" Classes for creating player objects """
+""" Classes for creating player objects
+
+    print_stats is run in main_scrape when a user inputs a player
+
+    print_more is essentially a switch statement that returns a stat
+    using the number input in main_scrape if user wants to view more
+"""
 
 class RB:
     def __init__(self, name, team, games_played, attempts, rushyd, rushtd, targets,

@@ -70,6 +70,7 @@ player.print_stats()
 while(True):
     see_more = input('Would you like to view another stat? (Y/N): ')
 
+    # give options for stats if yes
     if see_more.upper() == 'Y':
         if pos == 'QB':
             print("-------------------------\n 1) Games Played \t|\n 2) Attempts \t\t|\n 3) Completions \t|\n 4) Rush Yds \t\t|")
@@ -88,5 +89,6 @@ while(True):
             print(" 5) Rush YDs \t\t|\n 6) Rush TDs \t\t|\n-------------------------")
             stat_num = (input('Enter Number -> '))
             print('>> ', player.print_more(stat_num))
+    # end program if no
     else:
         break
