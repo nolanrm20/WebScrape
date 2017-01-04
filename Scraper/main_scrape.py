@@ -72,21 +72,21 @@ while(True):
 
     if see_more.upper() == 'Y':
         if pos == 'QB':
-            print("-------------------\n 1) Games Played \n 2) Attempts \n 3) Completions \n 4) Rush Yds ")
-            print(" 5) Rush TDs \n 6) Rush Attempts \n -------------------")
-            stat_num = (input('>> '))
+            print("-------------------------\n 1) Games Played \t|\n 2) Attempts \t\t|\n 3) Completions \t|\n 4) Rush Yds \t\t|")
+            print(" 5) Rush TDs \t\t|\n 6) Rush Attempts \t|\n-------------------------")
+            stat_num = (input('Enter Number -> '))
             print('>> ', player.print_more(stat_num))
 
         elif pos == 'RB':
-            print("-------------------\n 1) Games Played \n 2) Attempts \n 3) Rush TDs \n 4) Targets ")
-            print(" 5) Receptions \n 6) Rec TDs \n -------------------")
-            stat_num = (input('>> '))
+            print("-------------------------\n 1) Games Played \t|\n 2) Attempts \t\t|\n 3) Rush TDs \t\t|\n 4) Targets \t\t|")
+            print(" 5) Receptions \t\t|\n 6) Rec TDs \t\t|\n-------------------------")
+            stat_num = (input('Enter Number -> '))
             print('>> ', player.print_more(stat_num))
 
         else:
-            print("-------------------\n 1) Games Played \n 2) Targets \n 3) Rec TD \n 4) Rush Attempts")
-            print(" 5) Rush YDs \n 6) Rush TDs \n -------------------")
-            stat_num = (input('---> '))
+            print("-------------------------\n 1) Games Played \t|\n 2) Targets \t\t|\n 3) Rec TD \t\t|\n 4) Rush Attempts \t|")
+            print(" 5) Rush YDs \t\t|\n 6) Rush TDs \t\t|\n-------------------------")
+            stat_num = (input('Enter Number -> '))
             print('>> ', player.print_more(stat_num))
     else:
         break
