@@ -67,3 +67,26 @@ for item in player_array:
 
 # print player when found
 player.print_stats()
+while(True):
+    see_more = input('Would you like to view another stat? (Y/N): ')
+
+    if see_more.upper() == 'Y':
+        if pos == 'QB':
+            print("-------------------\n 1) Games Played \n 2) Attempts \n 3) Completions \n 4) Rush Yds ")
+            print(" 5) Rush TDs \n 6) Rush Attempts \n -------------------")
+            stat_num = (input('>> '))
+            print('>> ', player.print_more(stat_num))
+
+        elif pos == 'RB':
+            print("-------------------\n 1) Games Played \n 2) Attempts \n 3) Rush TDs \n 4) Targets ")
+            print(" 5) Receptions \n 6) Rec TDs \n -------------------")
+            stat_num = (input('>> '))
+            print('>> ', player.print_more(stat_num))
+
+        else:
+            print("-------------------\n 1) Games Played \n 2) Targets \n 3) Rec TD \n 4) Rush Attempts")
+            print(" 5) Rush YDs \n 6) Rush TDs \n -------------------")
+            stat_num = (input('---> '))
+            print('>> ', player.print_more(stat_num))
+    else:
+        break

@@ -1,3 +1,5 @@
+""" Classes for creating player objects """
+
 class RB:
     def __init__(self, name, team, games_played, attempts, rushyd, rushtd, targets,
                 receptions, recyd, recTD, fpoints, fppg):
@@ -20,6 +22,16 @@ class RB:
             "\nRush Yd: \t", self.rushyd, "\nRec Yd: \t", self.recyd, "\n", self.name, " scored ", self.fppg, " points per game")
         print("* Fantasy Points {} *".format(self.fpoints))
         print("*------------------------------------*")
+
+    def print_more(self, number):
+        return{
+            '1' : self.games_played,
+            '2' : self.attempts,
+            '3' : self.rushTD,
+            '4' : self.targets,
+            '5' : self.receptions,
+            '6' : self.recTD
+        }[number]
 
 class WR:
     def __init__(self, name, team, games_played, targets, receptions, recyd, recTD,
@@ -45,6 +57,16 @@ class WR:
         print("* Fantasy Points {} *".format(self.fpoints))
         print("*------------------------------------*")
 
+    def print_more(self, number):
+        return{
+            '1' : self.games_played,
+            '2' : self.targets,
+            '3' : self.recTD,
+            '4' : self.attempts,
+            '5' : self.rushyd,
+            '6' : self.rushTD
+        }[number]
+
 class QB:
     def __init__(self, name, team, games, completions, attempts, yards,
                 TD, ints, rushes, rushyd, rushTD, fpoints, fppg):
@@ -68,3 +90,13 @@ class QB:
             "\nRush Yd: \t", self.rushyd, "\nInts: \t\t", self.ints, "\n", self.name, " scored ", self.fppg, " points per game")
         print("* Fantasy Points {} *".format(self.fpoints))
         print("*------------------------------------*")
+
+    def print_more(self, number):
+        return{
+            '1' : self.games,
+            '2' : self.attempts,
+            '3' : self.completions,
+            '4' : self.rushyd,
+            '5' : self.rushTD,
+            '6' : self.rushes
+        }[number]
