@@ -9,6 +9,7 @@
 class RB:
     def __init__(self, name, team, games_played, attempts, rushyd, rushtd, targets,
                 receptions, recyd, recTD, fpoints, fppg):
+        self.pos = 'RB'
         self.name = name
         self.team = team
         self.attempts = attempts
@@ -39,9 +40,16 @@ class RB:
             '6' : self.recTD
         }[number]
 
+    def get_pos(self):
+        return self.pos
+
+    def get_name(self):
+        return self.name
+
 class WR:
     def __init__(self, name, team, games_played, targets, receptions, recyd, recTD,
                 attempts, rushyd, rushTD, fpoints, fppg):
+        self.pos = 'WR'
         self.name = name
         self.team = team
         self.attempts = attempts
@@ -73,9 +81,16 @@ class WR:
             '6' : self.rushTD
         }[number]
 
+    def get_pos(self):
+        return self.pos
+
+    def get_name(self):
+        return self.name
+
 class QB:
     def __init__(self, name, team, games, completions, attempts, yards,
                 TD, ints, rushes, rushyd, rushTD, fpoints, fppg):
+        self.pos = 'QB'
         self.name = name
         self.team = team
         self.games = games
@@ -106,3 +121,9 @@ class QB:
             '5' : self.rushTD,
             '6' : self.rushes
         }[number]
+
+    def get_pos(self):
+        return self.pos
+
+    def get_name(self):
+        return self.name
