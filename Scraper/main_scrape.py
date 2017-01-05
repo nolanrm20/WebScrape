@@ -16,7 +16,7 @@ def create_list():
     # site to be scraped
     url = 'http://www.fftoday.com/stats/playerstats.php?Season=2016&GameWeek=&PosID='
 
-    pos = (input("Which position would you liked to search: \n ---> ")).upper()
+    pos = (input("Which position would you like to search: \n ---> ")).upper()
     # get correct web url
     if pos.upper() == 'QB':
         url += '10'
