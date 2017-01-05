@@ -23,11 +23,11 @@ class RB:
         self.fppg = fppg
 
     def print_stats(self):
-        print("*------------------------------------*")
+        print("*----------------------------------------*")
         print("Name: \t\t", self.name, "\nTeam: \t\t", self.team, "\nTDs: \t\t", int(self.rushTD) + int(self.recTD),
             "\nRush Yd: \t", self.rushyd, "\nRec Yd: \t", self.recyd, "\n", self.name, " scored ", self.fppg, " points per game")
         print("* Fantasy Points {} *".format(self.fpoints))
-        print("*------------------------------------*")
+        print("*----------------------------------------*")
 
     def print_more(self, number):
         return{
@@ -56,12 +56,12 @@ class WR:
         self.fppg = fppg
 
     def print_stats(self):
-        print("*------------------------------------*")
+        print("*----------------------------------------*")
         print("Name: \t\t", self.name, "\nTeam: \t\t", self.team, "\nTDs: \t\t", int(self.rushTD) + int(self.recTD),
             "\nRec Yd: \t", self.recyd, "\nReceptions: \t", self.receptions, "\nTargets: \t", self.targets,
             "\n", self.name, " scored ", self.fppg, " points per game")
         print("* Fantasy Points {} *".format(self.fpoints))
-        print("*------------------------------------*")
+        print("*----------------------------------------*")
 
     def print_more(self, number):
         return{
@@ -91,11 +91,11 @@ class QB:
         self.fppg = fppg
 
     def print_stats(self):
-        print("*------------------------------------*")
+        print("*----------------------------------------*")
         print("Name: \t\t", self.name, "\nTeam: \t\t", self.team, "\nPass TDs: \t", self.TD,
-            "\nRush Yd: \t", self.rushyd, "\nInts: \t\t", self.ints, "\n", self.name, " scored ", self.fppg, " points per game")
+            "\nPass Yd: \t", self.yards, "\nInts: \t\t", self.ints, "\n", self.name, " scored ", self.fppg, " points per game")
         print("* Fantasy Points {} *".format(self.fpoints))
-        print("*------------------------------------*")
+        print("*----------------------------------------*")
 
     def print_more(self, number):
         return{
