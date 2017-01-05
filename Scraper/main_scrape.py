@@ -13,6 +13,7 @@ def create_list():
 
         returns a list of top 50 players at that position
      """
+
     # site to be scraped
     url = 'http://www.fftoday.com/stats/playerstats.php?Season=2016&GameWeek=&PosID='
 
@@ -35,6 +36,7 @@ def create_list():
     soup = BeautifulSoup(page, "lxml")
     col_count =0
     player_array = []
+
     for row in soup.find_all('td', class_='sort1'):
         # name is a hyperlink so find and get text
         if col_count == 0:
@@ -54,6 +56,7 @@ def create_list():
     print('-----------------------------')
     print('|Rank|        Name          |')
     print('-----------------------------')
+
     while(count < len(player_array)):
         if pos == 'QB':
             player = QB(player_array[count], player_array[count+1], player_array[count+2], player_array[count+3],
@@ -89,13 +92,12 @@ while(True):
             item.print_stats()
             player = item
             print()
-        else:
-            continue
 
     pos = player.get_pos()
     see_more = input('Would you like to view more of {}\'s stats? (Y/N): '.format(player.get_name()))
     # give options for stats if yes
     if see_more.upper() == 'Y':
+        
         while see_more.upper() == 'Y':
             if pos == 'QB':
                 print("-------------------------\n 1) Games Played \t|\n 2) Attempts \t\t|\n 3) Completions \t|\n 4) Rush Yds \t\t|")
