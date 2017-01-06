@@ -40,12 +40,6 @@ class RB:
             '6' : self.recTD
         }[number]
 
-    def get_pos(self):
-        return self.pos
-
-    def get_name(self):
-        return self.name
-
 class WR:
     def __init__(self, name, team, games_played, targets, receptions, recyd, recTD,
                 attempts, rushyd, rushTD, fpoints, fppg):
@@ -81,12 +75,6 @@ class WR:
             '6' : self.rushTD
         }[number]
 
-    def get_pos(self):
-        return self.pos
-
-    def get_name(self):
-        return self.name
-
 class QB:
     def __init__(self, name, team, games, completions, attempts, yards,
                 TD, ints, rushes, rushyd, rushTD, fpoints, fppg):
@@ -121,9 +109,3 @@ class QB:
             '5' : self.rushTD,
             '6' : self.rushes
         }[number]
-
-    def get_pos(self):
-        return self.pos
-
-    def get_name(self):
-        return self.name

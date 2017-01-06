@@ -17,7 +17,9 @@ def create_list():
     # site to be scraped
     url = 'http://www.fftoday.com/stats/playerstats.php?Season=2016&GameWeek=&PosID='
 
-    pos = (input("Which position would you like to search: \n ---> ")).upper()
+    pos = (input("Which position would you like to search: (QB, RB, WR)\n ---> ")).upper()
+
+    col_max = 0
     # get correct web url
     if pos.upper() == 'QB':
         url += '10'
@@ -28,7 +30,7 @@ def create_list():
     elif pos.upper() == 'WR':
         url += '30&LeagueID=1'
         col_max = 11
-
+    
     # gets webpage with stats
     page = urllib.request.urlopen(url).read()
 
@@ -74,7 +76,7 @@ def create_list():
 
         # add player to list
         pobject_array.append(player)
-        print('  {})\t'.format(len(pobject_array)),player.get_name())
+        print('  {})\t'.format(len(pobject_array)),player.name)
         count += col_max + 1
 
     return pobject_array
@@ -88,40 +90,33 @@ while(True):
     pick_player = input('Which players stats would you like to find? : ')
     print()
     for item in list_of_players:
-        if item.get_name() == pick_player:
+        if item.name == pick_player:
             item.print_stats()
             player = item
             print()
 
-    pos = player.get_pos()
-    see_more = input('Would you like to view more of {}\'s stats? (Y/N): '.format(player.get_name()))
+    pos = player.pos
+    see_more = input('Would you like to view more of {}\'s stats? (Y/N): '.format(player.name))
     # give options for stats if yes
     if see_more.upper() == 'Y':
-        
-        while see_more.upper() == 'Y':
-            if pos == 'QB':
-                print("-------------------------\n 1) Games Played \t|\n 2) Attempts \t\t|\n 3) Completions \t|\n 4) Rush Yds \t\t|")
-                print(" 5) Rush TDs \t\t|\n 6) Rush Attempts \t|\n 0) Exit \t\t|\n-------------------------")
-                stat_num = (input('Enter Number -> '))
-                if stat_num == '0':
-                    break
-                print('>> ', player.print_more(stat_num))
 
-            elif pos == 'RB':
-                print("-------------------------\n 1) Games Played \t|\n 2) Attempts \t\t|\n 3) Rush TDs \t\t|\n 4) Targets \t\t|")
-                print(" 5) Receptions \t\t|\n 6) Rec TDs \t\t|\n 0) Exit \t\t|\n-------------------------")
-                stat_num = (input('Enter Number -> '))
-                if stat_num == '0':
-                    break
-                print('>> ', player.print_more(stat_num))
+        if pos == 'QB':
+            print("------------------------------")
+            print(" Games Played \t\t{}\n Attempts \t\t{}\n Completions \t\t{}".format(player.games, player.attempts, player.completions))
+            print(" Rush Yds \t\t{}\n Rush TDs \t\t{}\n Rush Attempts \t\t{}".format(player.rushyd, player.rushTD, player.rushes))
+            print("------------------------------")
 
-            else:
-                print("-------------------------\n 1) Games Played \t|\n 2) Targets \t\t|\n 3) Rec TD \t\t|\n 4) Rush Attempts \t|")
-                print(" 5) Rush YDs \t\t|\n 6) Rush TDs \t\t|\n 0) Exit \t\t|\n-------------------------")
-                stat_num = (input('Enter Number -> '))
-                if stat_num == '0':
-                    break
-                print('>> ', player.print_more(stat_num))
+        elif pos == 'RB':
+            print("-----------------------------")
+            print(" Games Played \t\t{}\n Attempts \t\t{}\n Rush TDs \t\t{}".format(player.games_played, player.attempts, player.rushTD))
+            print(" Targets \t\t{}\n Receptions \t\t{}\n Rec TDs \t\t{}".format(player.targets, player.receptions, player.recTD))
+            print("-----------------------------")
+
+        else:
+            print("-----------------------------")
+            print(" Games Played \t\t{}\n Targets \t\t{}\n Rec TD \t\t{}".format(player.games_played, player.targets, player.recTD))
+            print(" Rush Attempts \t\t{}\n Rush YDs \t\t{}\n Rush TDs \t\t{}".format(player.attempts, player.rushyd, player.rushTD))
+            print("-----------------------------")
 
     # check if another search is necessary
     new_search = input('Would you like to search another players stats? (Y/N): ')
