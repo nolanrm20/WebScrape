@@ -26,19 +26,15 @@ class RB:
     def print_stats(self):
         print("*----------------------------------------*")
         print("Name: \t\t", self.name, "\nTeam: \t\t", self.team, "\nTDs: \t\t", int(self.rushTD) + int(self.recTD),
-            "\nRush Yd: \t", self.rushyd, "\nRec Yd: \t", self.recyd, "\n", self.name, " scored ", self.fppg, " points per game")
+            "\nRush Yd: \t", self.rushyd, "\nRec Yd: \t", self.recyd, "\n", self.name, " scored ", self.fppg, " points per game played")
         print("* Fantasy Points {} *".format(self.fpoints))
         print("*----------------------------------------*")
 
-    def print_more(self, number):
-        return{
-            '1' : self.games_played,
-            '2' : self.attempts,
-            '3' : self.rushTD,
-            '4' : self.targets,
-            '5' : self.receptions,
-            '6' : self.recTD
-        }[number]
+    def print_more(self):
+        print("-----------------------------")
+        print(" Games Played \t\t{}\n Attempts \t\t{}\n Rush TDs \t\t{}".format(self.games_played, self.attempts, self.rushTD))
+        print(" Targets \t\t{}\n Receptions \t\t{}\n Rec TDs \t\t{}".format(self.targets, self.receptions, self.recTD))
+        print("-----------------------------")
 
 class WR:
     def __init__(self, name, team, games_played, targets, receptions, recyd, recTD,
@@ -61,19 +57,15 @@ class WR:
         print("*----------------------------------------*")
         print("Name: \t\t", self.name, "\nTeam: \t\t", self.team, "\nTDs: \t\t", int(self.rushTD) + int(self.recTD),
             "\nRec Yd: \t", self.recyd, "\nReceptions: \t", self.receptions, "\nTargets: \t", self.targets,
-            "\n", self.name, " scored ", self.fppg, " points per game")
+            "\n", self.name, " scored ", self.fppg, " points per game played")
         print("* Fantasy Points {} *".format(self.fpoints))
         print("*----------------------------------------*")
 
-    def print_more(self, number):
-        return{
-            '1' : self.games_played,
-            '2' : self.targets,
-            '3' : self.recTD,
-            '4' : self.attempts,
-            '5' : self.rushyd,
-            '6' : self.rushTD
-        }[number]
+    def print_more(self):
+        print("-----------------------------")
+        print(" Games Played \t\t{}\n Targets \t\t{}\n Rec TD \t\t{}".format(self.games_played, self.targets, self.recTD))
+        print(" Rush Attempts \t\t{}\n Rush YDs \t\t{}\n Rush TDs \t\t{}".format(self.attempts, self.rushyd, self.rushTD))
+        print("-----------------------------")
 
 class QB:
     def __init__(self, name, team, games, completions, attempts, yards,
@@ -96,16 +88,12 @@ class QB:
     def print_stats(self):
         print("*----------------------------------------*")
         print("Name: \t\t", self.name, "\nTeam: \t\t", self.team, "\nPass TDs: \t", self.TD,
-            "\nPass Yd: \t", self.yards, "\nInts: \t\t", self.ints, "\n", self.name, " scored ", self.fppg, " points per game")
+            "\nPass Yd: \t", self.yards, "\nInts: \t\t", self.ints, "\n", self.name, " scored ", self.fppg, " points per game played")
         print("* Fantasy Points {} *".format(self.fpoints))
         print("*----------------------------------------*")
 
-    def print_more(self, number):
-        return{
-            '1' : self.games,
-            '2' : self.attempts,
-            '3' : self.completions,
-            '4' : self.rushyd,
-            '5' : self.rushTD,
-            '6' : self.rushes
-        }[number]
+    def print_more(self):
+        print("------------------------------")
+        print(" Games Played \t\t{}\n Attempts \t\t{}\n Completions \t\t{}".format(self.games, self.attempts, self.completions))
+        print(" Rush Yds \t\t{}\n Rush TDs \t\t{}\n Rush Attempts \t\t{}".format(self.rushyd, self.rushTD, self.rushes))
+        print("------------------------------")
