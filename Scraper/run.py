@@ -9,9 +9,8 @@
     """
 
 import sys
-from main_scrape import create_list
+from main_scrape import *
 
 p_list = create_list(sys.argv[1])
-for item in p_list:
-    if item.name.upper() == ''.join(sys.argv[2]).upper():
-        item.print_stats()
+player = find_player(p_list, ''.join(sys.argv[2]))
+player.print_stats()

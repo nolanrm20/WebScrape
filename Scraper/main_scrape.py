@@ -72,3 +72,10 @@ def create_list(pos):
         count += col_max + 1
 
     return players
+
+def find_player(player_list, player):
+    for item in player_list:
+        if item.name.upper() == player.upper():
+            return item
+
+    return 0

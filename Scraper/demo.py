@@ -5,7 +5,7 @@
 
     """
 
-from main_scrape import create_list
+from main_scrape import *
 
 while(True):
 
@@ -23,11 +23,8 @@ while(True):
     # get input for player to search
     pick_player = input('Which players stats would you like to find? : ')
     print()
-    for item in list_of_players:
-        if item.name.upper() == pick_player.upper():
-            item.print_stats()
-            player = item
-            print()
+    player = find_player(list_of_players, pick_player)
+    player.print_stats()
 
     # check if another search is necessary
     new_search = input('Would you like to search another players stats? (Y/N): ')
