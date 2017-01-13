@@ -7,7 +7,7 @@
     """
 
 import sys
-from main_scrape import *
+from scraper import *
 
 try:
     p_list = create_list(sys.argv[1])

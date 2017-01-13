@@ -5,7 +5,7 @@
 
     """
 
-from main_scrape import *
+from scraper import *
 
 while(True):
 
