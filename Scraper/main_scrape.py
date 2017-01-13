@@ -53,7 +53,7 @@ def create_list(pos):
             col_count += 1
 
     # search for and find player in list
-    # create player item and print their name
+    # create player item
     count = 0
     players = []
 
@@ -74,6 +74,14 @@ def create_list(pos):
     return players
 
 def find_player(player_list, player):
+    """
+        param player_list: list of 50 players from
+              player: name of player you are searching for
+
+        returns player object of specified player if found
+        return 0 if not found
+
+    """
     for item in player_list:
         if item.name.upper() == player.upper():
             return item

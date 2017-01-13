@@ -2,9 +2,7 @@
     run.py takes paramters at the command line and returns all stats
     for the given player
 
-    ex: python3 run.py qb 'aaron rodgers'
-
-    this would return the stats for aaron rodgers
+    ex: python3 run.py [position] [player name]
 
     """
 
