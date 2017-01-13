@@ -75,7 +75,7 @@ def create_list(pos):
 
 def find_player(player_list, player):
     """
-        param player_list: list of 50 players from
+        param player_list: list of player objects
               player: name of player you are searching for
 
         returns player object of specified player if found
