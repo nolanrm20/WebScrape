@@ -17,14 +17,20 @@ while(True):
     print('|           Name            |')
     print('-----------------------------')
     for index, item in enumerate(list_of_players):
-        print('  {})\t'.format(index),item.name)
+        print('  {})\t'.format(index + 1),item.name)
 
 
     # get input for player to search
-    pick_player = input('Which players stats would you like to find? : ')
-    print()
-    player = find_player(list_of_players, pick_player)
-    player.print_stats()
+    while(True):
+        try:
+            pick_player = input('Which players stats would you like to find? : ')
+            print()
+            player = find_player(list_of_players, pick_player)
+            player.print_stats()
+            break
+        except AttributeError:
+            print("That isn't a valid player! Try again.")
+
 
     # check if another search is necessary
     new_search = input('Would you like to search another players stats? (Y/N): ')

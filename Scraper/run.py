@@ -11,6 +11,9 @@
 import sys
 from main_scrape import *
 
-p_list = create_list(sys.argv[1])
-player = find_player(p_list, ''.join(sys.argv[2]))
-player.print_stats()
+try:
+    p_list = create_list(sys.argv[1])
+    player = find_player(p_list, ''.join(sys.argv[2]))
+    player.print_stats()
+except AttributeError:
+    print("That isn't a valid player! Try again.")
