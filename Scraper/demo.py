@@ -29,12 +29,6 @@ while(True):
             player = item
             print()
 
-    pos = player.pos
-    see_more = input('Would you like to view more of {}\'s stats? (Y/N): '.format(player.name))
-    # show more stats if yes
-    if see_more.upper() == 'Y':
-        player.print_more()
-
     # check if another search is necessary
     new_search = input('Would you like to search another players stats? (Y/N): ')
     if new_search.upper() == 'N':
