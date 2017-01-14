@@ -87,3 +87,20 @@ def find_player(player_list, player):
             return item
 
     return 0
+
+def compare_players(player_list, player1, player2):
+    """
+        param player_list: list of player objects
+              player1: name of first player
+              player2: name of second player
+
+        prints stats of two players being compared or throws exception
+        if invalid names are entered
+    """
+    try:
+        p1 = find_player(player_list, player1)
+        p2 = find_player(player_list, player2)
+        p1.print_stats()
+        p2.print_stats()
+    except AttributeError:
+        print('At least one of those players was invalid. Try again.')

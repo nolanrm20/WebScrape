@@ -8,7 +8,7 @@
 from scraper import *
 
 while(True):
-
+    
     pos = (input("Which position would you like to search: (QB, RB, WR)\n ---> ")).upper()
     # get list of players
     list_of_players = create_list(pos)
