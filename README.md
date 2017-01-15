@@ -1,5 +1,7 @@
 # WebScrape
 This is a web scraper that pulls weekly fantasy sport stats.
+demo.py will give you a list of players you can search from at a given position.
+run.py allows you to quickly search one or two players to compare from the command line.
 
 I made this to get experience using bs4 and using the data from it.
 You can use this program to search players during fantasy football drafts
